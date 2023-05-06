@@ -1,6 +1,5 @@
 {
-  "name": "continuum",
-  "private": true,
+  "name": "ct-ds",
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/continuum.js",
