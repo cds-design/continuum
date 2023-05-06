@@ -1,6 +1,6 @@
 {
   "name": "ct-ds",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/continuum.js",
   "types": "./types/index.d.ts",
@@ -18,7 +18,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint src/**"
+    "lint": "eslint src/**",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "lit": "^2.7.3"
