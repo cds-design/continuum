@@ -1,4 +1,5 @@
 import type { LitElement } from "lit";
+import type { DetailedHTMLProps, HTMLAttributes } from "react"
                 
 import type HTMLCtAlert from "./components/alert";
 import type HTMLCtAvatar from "./components/avatar";
@@ -19,7 +20,7 @@ declare function load(...components: ComponentName[]): void;
 export { load as default, load };
 
 
-type CDS2JSX<T> = React.DetailedHTMLProps<ExtractProps<T> | React.HTMLAttributes<T>, T>
+type CDS2JSX<T> = DetailedHTMLProps<ExtractProps<T> | HTMLAttributes<T>, T>
 
 type ExtractProps<T> = Pick<T, Exclude<keyof T, keyof LitElement>>
 

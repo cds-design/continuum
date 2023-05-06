@@ -38,12 +38,13 @@ export default async function typeModifier() {
     .join("\n            ");
 
   indexTS = `import type { LitElement } from "lit";
+import type { DetailedHTMLProps, HTMLAttributes } from "react"
                 
 ${componentTypesImports}
 
 ${indexTS}
 
-type CDS2JSX<T> = React.DetailedHTMLProps<ExtractProps<T> | React.HTMLAttributes<T>, T>
+type CDS2JSX<T> = DetailedHTMLProps<ExtractProps<T> | HTMLAttributes<T>, T>
 
 type ExtractProps<T> = Pick<T, Exclude<keyof T, keyof LitElement>>
 
