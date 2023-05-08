@@ -1,4 +1,3 @@
-
 import { property, state } from "lit/decorators.js";
 import { html, svg } from "lit/static-html.js";
 import { WC } from "../../WC";
@@ -49,12 +48,12 @@ export default class Badge extends WC {
           <slot></slot>
         </span>
         ${this.closeable
-        ? html`
+          ? html`
               <span class="close-icon" @click=${this.close()}>
                 ${Icon.cross}
               </span>
             `
-        : null}
+          : null}
       </div>
     `;
   }

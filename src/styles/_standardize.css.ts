@@ -10,7 +10,7 @@ export default css`
   }
 
   :host {
-    display: inline-block;
+    display: inline-flex;
     color: var(--color);
     font-size: var(--font-size);
     font-family: var(--font-family);

@@ -44,8 +44,8 @@ export default class Input extends WC {
     return html`
       <div
         class=${classMap({
-      disabled: this.disabled,
-    })}
+          disabled: this.disabled,
+        })}
       >
         <label for="input" class="texture">
           ${this.label ?? this.placeholder}

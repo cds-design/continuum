@@ -12,7 +12,7 @@ export default async function typeModifier() {
   let indexTS = await readFile("types/index.d.ts", "utf-8");
   indexTS = indexTS.replace(
     "type ComponentName = string;",
-    `type ComponentName = ${folders
+    `export type ComponentName = ${folders
       .map((folder) => `"${folder}"`)
       .join(" | ")};`
   );

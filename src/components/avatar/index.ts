@@ -64,8 +64,8 @@ export default class Avatar extends WC {
     return html`
       <img
         class=${classMap({
-      active: this.active,
-    })}
+          active: this.active,
+        })}
         src=${this.src}
         alt="profile"
       />

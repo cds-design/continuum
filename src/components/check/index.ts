@@ -40,8 +40,8 @@ export default class Check extends WC {
       <label
         for="check"
         class=${classMap({
-      disabled: this.disabled,
-    })}
+          disabled: this.disabled,
+        })}
       >
         <input
           type="checkbox"

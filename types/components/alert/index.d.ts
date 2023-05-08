@@ -12,7 +12,7 @@ declare const Icons: {
 export default class Alert extends WC {
     static styles: CSSResult[];
     /**
-     * The type of alert
+     * The type of alert component
      * changes the color and icon of the alert
      */
     type: Exclude<keyof typeof Icons, "cross">;

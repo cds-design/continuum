@@ -33,11 +33,11 @@ export default class Slider extends WC {
         type="range"
         value=${this.value}
         class=${classMap({
-      disabled: this.disabled,
-    })}
+          disabled: this.disabled,
+        })}
         style=${styleMap({
-      "--value": `${this.value}%`,
-    })}
+          "--value": `${this.value}%`,
+        })}
       />
     `;
   }

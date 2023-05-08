@@ -19,7 +19,7 @@ export default class Alert extends WC {
   static styles = [globalsCss, stylesCss];
 
   /**
-   * The type of alert
+   * The type of alert component
    * changes the color and icon of the alert
    */
   @property()
@@ -60,12 +60,12 @@ export default class Alert extends WC {
           <slot></slot>
         </span>
         ${this.closable
-        ? html`
+          ? html`
               <span class="close-icon" @click=${this.close}>
                 ${Icons.cross}
               </span>
             `
-        : null}
+          : null}
       </div>
     `;
   }

@@ -16,13 +16,13 @@ async function importComponent(name: ComponentName) {
 function load(...components: ComponentName[]) {
   components.forEach(async (name) => {
     if (loadedComponents.has(name)) {
-      console.warn(`Component ${name} already loaded`);
+      return console.warn(`Component ${name} already loaded`);
     }
     const Component = await importComponent(name);
     customElements.define(`${TAG_NAME_PREFIX}-${name}`, Component);
-    customElements.whenDefined(`${TAG_NAME_PREFIX}-${name}`).then(() => {
+    // customElements.whenDefined(`${TAG_NAME_PREFIX}-${name}`).then(() => {
       loadedComponents.add(name);
-    });
+    // });
   });
 }
 

@@ -18,7 +18,6 @@ export default function postCSSPlugin(): Plugin {
       }
 
       return code;
-
     },
   };
 }

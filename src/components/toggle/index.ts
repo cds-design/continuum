@@ -32,8 +32,8 @@ export default class Toggle extends WC {
       <label
         for="toggle"
         class=${classMap({
-      disabled: this.disabled,
-    })}
+          disabled: this.disabled,
+        })}
       >
         <input
           type="checkbox"
