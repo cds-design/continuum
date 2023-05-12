@@ -5,6 +5,9 @@ import { WC } from "../../WC";
 import globalsCss from "../../styles/globals.css";
 import styleCss from "./style.css";
 
+/**
+ * A component that displays an input field, usually for forms
+ */
 export default class Input extends WC {
   static styles = [globalsCss, styleCss];
 
@@ -27,7 +30,7 @@ export default class Input extends WC {
   /**
    * The value of the input field
    */
-  @property({ reflect: true }) value!: string;
+  @property({ reflect: true }) value: string = "";
 
   /**
    * Disables the input field

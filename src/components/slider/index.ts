@@ -6,6 +6,9 @@ import { WC } from "../../WC";
 import globalsCss from "../../styles/globals.css";
 import styleCss from "../slider/style.css";
 
+/**
+ * A component that displays a slider
+ */
 export default class Slider extends WC {
   static styles = [globalsCss, styleCss];
 

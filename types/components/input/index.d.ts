@@ -1,5 +1,8 @@
 import type { CSSResult, TemplateResult } from 'lit';
 import { WC } from "../../WC";
+/**
+ * A component that displays an input field, usually for forms
+ */
 export default class Input extends WC {
     static styles: CSSResult[];
     /**

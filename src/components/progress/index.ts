@@ -4,6 +4,9 @@ import { WC } from "../../WC";
 import globalsCss from "../../styles/globals.css";
 import styleCss from "./style.css";
 
+/**
+ * A component that displays a progress bar, usually for loading
+ */
 export default class Progress extends WC {
   static styles = [globalsCss, styleCss];
 

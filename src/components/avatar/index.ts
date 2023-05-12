@@ -17,6 +17,9 @@ const svgClip = svg`<svg
               </clipPath>
             </svg>`;
 
+/**
+ * A component that displays an avatar image
+ */
 export default class Avatar extends WC {
   static styles = [
     globalsCss,

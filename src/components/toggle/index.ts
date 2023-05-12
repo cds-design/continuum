@@ -5,6 +5,9 @@ import { WC } from "../../WC";
 import globalsCss from "../../styles/globals.css";
 import styleCss from "./style.css";
 
+/**
+ * A component that displays a toggle switch.
+ */
 export default class Toggle extends WC {
   static styles = [globalsCss, styleCss];
 

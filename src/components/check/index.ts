@@ -14,23 +14,41 @@ const svgAnimation = svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29
                             <polyline points="290.27 20 117.44 192.83 20 95.4" />
                         </svg>`;
 
+/**
+ * A component that displays a checkbox, usually for forms
+ */
 export default class Check extends WC {
   static styles = [globalsCss, styleCss];
 
+  /**
+   * Checked state of the checkbox
+   */
   @property({ type: Boolean, reflect: true })
   checked = false;
 
+  /**
+   * Disables the checkbox
+   */
   @property({ type: Boolean })
   disabled = false;
 
+  /**
+   * Checks the checkbox
+   */
   check() {
     this.checked = true;
   }
 
+  /**
+   * Unchecks the checkbox
+   */
   uncheck() {
     this.checked = false;
   }
 
+  /**
+   * Toggles the checkbox
+   */
   toggle() {
     this.checked = !this.checked;
   }

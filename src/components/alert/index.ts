@@ -23,7 +23,7 @@ export default class Alert extends WC {
    * changes the color and icon of the alert
    */
   @property()
-  type: Exclude<keyof typeof Icons, "cross"> = "info";
+  type: "info" | "cross" | "warn" = "info";
 
   /**
    * Makes the alert closable

@@ -1,5 +1,8 @@
 import type { CSSResult, TemplateResult } from 'lit';
 import { WC } from "../../WC";
+/**
+ * A component that displays a slider
+ */
 export default class Slider extends WC {
     static styles: CSSResult[];
     /**

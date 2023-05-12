@@ -1,5 +1,8 @@
 import type { CSSResult, TemplateResult } from 'lit';
 import { WC } from "../../WC";
+/**
+ * A component that displays an avatar image
+ */
 export default class Avatar extends WC {
     static styles: CSSResult[];
     /**

@@ -4,6 +4,9 @@ import { WC } from "../../WC";
 import globalsCss from "../../styles/globals.css";
 import styleCss from "./style.css";
 
+/**
+ * A component that displays a button 
+ */
 export default class Button extends WC {
   /**
    * Disables the button

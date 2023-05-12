@@ -1,11 +1,5 @@
-import type { TemplateResult, CSSResult } from 'lit';
+import type { CSSResult, TemplateResult } from 'lit';
 import { WC } from "../../WC";
-declare const Icons: {
-    readonly cross: TemplateResult;
-    readonly error: TemplateResult;
-    readonly info: TemplateResult;
-    readonly warn: TemplateResult;
-};
 /**
  * A component for displaying alerts
  */
@@ -15,7 +9,7 @@ export default class Alert extends WC {
      * The type of alert component
      * changes the color and icon of the alert
      */
-    type: Exclude<keyof typeof Icons, "cross">;
+    type: "info" | "cross" | "warn";
     /**
      * Makes the alert closable
      */
@@ -27,4 +21,3 @@ export default class Alert extends WC {
     close(): void;
     render(): TemplateResult | null;
 }
-export {};

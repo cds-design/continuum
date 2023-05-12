@@ -3,6 +3,9 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import postCSS from "./scripts/postCSS";
 import typeModifier from "./scripts/typeModifier";
+import generateMarkdown from "./scripts/md";
+
+generateMarkdown()
 
 export default defineConfig({
   build: {
@@ -24,6 +27,6 @@ export default defineConfig({
       exclude: "src/**/*.css.ts",
       outputDir: "types",
       afterBuild: typeModifier,
-    }),
+    })
   ],
 });

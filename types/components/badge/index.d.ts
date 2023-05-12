@@ -1,5 +1,8 @@
 import type { CSSResult, TemplateResult } from 'lit';
 import { WC } from "../../WC";
+/**
+ * A component that displays a badge, usually for tags, chips, etc.
+ */
 export default class Badge extends WC {
     static styles: CSSResult[];
     /**
