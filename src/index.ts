@@ -1,6 +1,6 @@
 type ComponentName = string;
 
-const TAG_NAME_PREFIX = "ct";
+export const TAG_NAME_PREFIX = "cds";
 
 const loadedComponents = new Set<ComponentName>();
 
@@ -20,9 +20,9 @@ function load(...components: ComponentName[]) {
     }
     const Component = await importComponent(name);
     customElements.define(`${TAG_NAME_PREFIX}-${name}`, Component);
-    // customElements.whenDefined(`${TAG_NAME_PREFIX}-${name}`).then(() => {
+    customElements.whenDefined(`${TAG_NAME_PREFIX}-${name}`).then(() => {
       loadedComponents.add(name);
-    // });
+    });
   });
 }
 

@@ -1,7 +1,7 @@
 import { property, state } from "lit/decorators.js";
 import { html, svg } from "lit/static-html.js";
-import { WC } from "../../WC";
-import globalsCss from "../../styles/globals.css";
+import { WC } from "#WC";
+import globalsCss from "#globals.css";
 import styleCss from "./style.css";
 
 const Icon = {

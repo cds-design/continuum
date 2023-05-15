@@ -1,4 +1,5 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
+import { TAG_NAME_PREFIX } from "../src/index";
 
 function capitalizeFirstLetter(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -20,20 +21,20 @@ export default async function typeModifier() {
   const componentTypesImports = folders
     .map(
       (folder) =>
-        `import type HTMLCt${capitalizeFirstLetter(
+        `import type HTML${capitalizeFirstLetter(TAG_NAME_PREFIX)}${capitalizeFirstLetter(
           folder
         )} from "./components/${folder}";`
     )
     .join("\n");
 
   const HTMLnamespace = folders
-    .map((folder) => `"ct-${folder}": HTMLCt${capitalizeFirstLetter(folder)}`)
+    .map((folder) => `"${TAG_NAME_PREFIX}-${folder}": HTML${capitalizeFirstLetter(TAG_NAME_PREFIX)}${capitalizeFirstLetter(folder)}`)
     .join("\n        ");
 
   const JSXnamespace = folders
     .map(
       (folder) =>
-        `"ct-${folder}": CDS2JSX<HTMLCt${capitalizeFirstLetter(folder)}>`
+        `"${TAG_NAME_PREFIX}-${folder}": CDS2JSX<HTML${capitalizeFirstLetter(TAG_NAME_PREFIX)}${capitalizeFirstLetter(folder)}>`
     )
     .join("\n            ");
 

@@ -1,8 +1,8 @@
 import { property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { html, svg } from "lit/static-html.js";
-import { WC } from "../../WC";
-import globalsCss from "../../styles/globals.css";
+import { WC } from "#WC";
+import globalsCss from "#globals.css";
 import styleCss from "./style.css";
 
 const svgAnimation = svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 290">

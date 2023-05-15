@@ -1,17 +1,18 @@
 import type { LitElement } from "lit";
 import type { DetailedHTMLProps, HTMLAttributes } from "react"
                 
-import type HTMLCtAlert from "./components/alert";
-import type HTMLCtAvatar from "./components/avatar";
-import type HTMLCtBadge from "./components/badge";
-import type HTMLCtButton from "./components/button";
-import type HTMLCtCheck from "./components/check";
-import type HTMLCtInput from "./components/input";
-import type HTMLCtProgress from "./components/progress";
-import type HTMLCtSlider from "./components/slider";
-import type HTMLCtToggle from "./components/toggle";
+import type HTMLCdsAlert from "./components/alert";
+import type HTMLCdsAvatar from "./components/avatar";
+import type HTMLCdsBadge from "./components/badge";
+import type HTMLCdsButton from "./components/button";
+import type HTMLCdsCheck from "./components/check";
+import type HTMLCdsInput from "./components/input";
+import type HTMLCdsProgress from "./components/progress";
+import type HTMLCdsSlider from "./components/slider";
+import type HTMLCdsToggle from "./components/toggle";
 
 export type ComponentName = "alert" | "avatar" | "badge" | "button" | "check" | "input" | "progress" | "slider" | "toggle";
+export declare const TAG_NAME_PREFIX = "cds";
 /**
  * Load web components as custom elements.
  * Only loads components that have not been loaded before.
@@ -26,27 +27,27 @@ type ExtractProps<T> = Pick<T, Exclude<keyof T, keyof LitElement>>
 
 declare global {
     interface HTMLElementTagNameMap {
-        "ct-alert": HTMLCtAlert
-        "ct-avatar": HTMLCtAvatar
-        "ct-badge": HTMLCtBadge
-        "ct-button": HTMLCtButton
-        "ct-check": HTMLCtCheck
-        "ct-input": HTMLCtInput
-        "ct-progress": HTMLCtProgress
-        "ct-slider": HTMLCtSlider
-        "ct-toggle": HTMLCtToggle
+        "cds-alert": HTMLCdsAlert
+        "cds-avatar": HTMLCdsAvatar
+        "cds-badge": HTMLCdsBadge
+        "cds-button": HTMLCdsButton
+        "cds-check": HTMLCdsCheck
+        "cds-input": HTMLCdsInput
+        "cds-progress": HTMLCdsProgress
+        "cds-slider": HTMLCdsSlider
+        "cds-toggle": HTMLCdsToggle
     }
     namespace JSX {
         interface IntrinsicElements {
-            "ct-alert": CDS2JSX<HTMLCtAlert>
-            "ct-avatar": CDS2JSX<HTMLCtAvatar>
-            "ct-badge": CDS2JSX<HTMLCtBadge>
-            "ct-button": CDS2JSX<HTMLCtButton>
-            "ct-check": CDS2JSX<HTMLCtCheck>
-            "ct-input": CDS2JSX<HTMLCtInput>
-            "ct-progress": CDS2JSX<HTMLCtProgress>
-            "ct-slider": CDS2JSX<HTMLCtSlider>
-            "ct-toggle": CDS2JSX<HTMLCtToggle>
+            "cds-alert": CDS2JSX<HTMLCdsAlert>
+            "cds-avatar": CDS2JSX<HTMLCdsAvatar>
+            "cds-badge": CDS2JSX<HTMLCdsBadge>
+            "cds-button": CDS2JSX<HTMLCdsButton>
+            "cds-check": CDS2JSX<HTMLCdsCheck>
+            "cds-input": CDS2JSX<HTMLCdsInput>
+            "cds-progress": CDS2JSX<HTMLCdsProgress>
+            "cds-slider": CDS2JSX<HTMLCdsSlider>
+            "cds-toggle": CDS2JSX<HTMLCdsToggle>
         }
     }
 }

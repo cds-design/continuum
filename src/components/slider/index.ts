@@ -2,8 +2,8 @@ import { property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { html } from "lit/static-html.js";
-import { WC } from "../../WC";
-import globalsCss from "../../styles/globals.css";
+import { WC } from "#WC";
+import globalsCss from "#globals.css";
 import styleCss from "../slider/style.css";
 
 /**

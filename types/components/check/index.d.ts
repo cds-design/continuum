@@ -1,5 +1,5 @@
 import type { CSSResult, TemplateResult } from 'lit';
-import { WC } from "../../WC";
+import { WC } from "#WC";
 /**
  * A component that displays a checkbox, usually for forms
  */

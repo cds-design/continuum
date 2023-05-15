@@ -3,11 +3,17 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import postCSS from "./scripts/postCSS";
 import typeModifier from "./scripts/typeModifier";
-import generateMarkdown from "./scripts/md";
-
-generateMarkdown()
+import cem from 'vite-plugin-cem'
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: "#globals.css?used",
+        replacement: "./src/styles/globals.css.ts"
+      }
+    ],
+  },
   build: {
     minify: "terser",
     lib: {
@@ -27,6 +33,13 @@ export default defineConfig({
       exclude: "src/**/*.css.ts",
       outputDir: "types",
       afterBuild: typeModifier,
-    })
+    }),
+    cem({
+      files: ["src/components/*/index.ts"],
+      output: "custom-elements.json",
+      lit: true,
+      plugins: [
+      ]
+    }),
   ],
 });
