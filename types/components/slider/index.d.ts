@@ -14,6 +14,18 @@ export default class Slider extends WC {
      * Disables the slider
      */
     disabled: boolean;
+    /**
+     * The step of the slider
+     */
+    step: number;
+    /**
+     * The minimum value of the slider
+     */
+    min: number;
+    /**
+     * The maximum value of the slider
+     */
+    max: number;
     private _handleInput;
     render(): TemplateResult;
 }

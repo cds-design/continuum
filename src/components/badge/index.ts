@@ -3,6 +3,7 @@ import { html, svg } from "lit/static-html.js";
 import { WC } from "#WC";
 import globalsCss from "#globals.css";
 import styleCss from "./style.css";
+import { booleanConverter } from "#helpers";
 
 const Icon = {
   cross: svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M18 18 2 2m0 16L18 2"/></svg>`,
@@ -17,13 +18,19 @@ export default class Badge extends WC {
   /**
    * Makes the badge closable
    */
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: booleanConverter
+  })
   closeable = false;
 
   /**
    * Disables the badge
    */
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: booleanConverter
+  })
   disabled = false;
 
   @state()
@@ -43,7 +50,7 @@ export default class Badge extends WC {
     return html`
       <div
         class="texture"
-        ?aria-disable=${this.disabled}
+        .aria-disable=${this.disabled}
         aria-atomic
         role="status"
       >
@@ -51,12 +58,12 @@ export default class Badge extends WC {
           <slot></slot>
         </span>
         ${this.closeable
-          ? html`
-              <span class="close-icon" @click=${this.close()}>
+      ? html`
+              <span class="close-icon" @click=${this.close}>
                 ${Icon.cross}
               </span>
             `
-          : null}
+      : null}
       </div>
     `;
   }

@@ -4,6 +4,7 @@ import { html } from "lit/static-html.js";
 import { WC } from "#WC";
 import globalsCss from "#globals.css";
 import styleCss from "./style.css";
+import { booleanConverter } from "#helpers";
 
 /**
  * A component that displays a toggle switch.
@@ -14,13 +15,20 @@ export default class Toggle extends WC {
   /**
    * Value of the toggle
    */
-  @property({ type: Boolean, reflect: true })
+  @property({
+    type: Boolean,
+    reflect: true,
+    converter: booleanConverter
+  })
   toggled = false;
 
   /**
    * Disables the toggle
    */
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: booleanConverter
+  })
   disabled = false;
 
   /**
@@ -43,6 +51,7 @@ export default class Toggle extends WC {
           name="toggle"
           class="texture"
           id="toggle"
+          @input=${this.toggle}
           .disabled=${this.disabled}
           .checked=${this.toggled}
         />

@@ -4,6 +4,7 @@ import { html, svg } from "lit/static-html.js";
 import { WC } from "#WC";
 import globalsCss from "#globals.css";
 import styleCss from "./style.css";
+import { booleanConverter } from "#helpers";
 
 const svgAnimation = svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 290">
                             <path
@@ -23,13 +24,20 @@ export default class Check extends WC {
   /**
    * Checked state of the checkbox
    */
-  @property({ type: Boolean, reflect: true })
+  @property({
+    type: Boolean,
+    reflect: true,
+    converter: booleanConverter,
+  })
   checked = false;
 
   /**
    * Disables the checkbox
    */
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: booleanConverter,
+  })
   disabled = false;
 
   /**
@@ -64,9 +72,10 @@ export default class Check extends WC {
         <input
           type="checkbox"
           name="check"
-          ?disabled=${this.disabled}
           id="check"
-          ?checked=${this.checked}
+          @input=${this.toggle}
+          .disabled=${this.disabled}
+          .checked=${this.checked}
         />
         <div class="texture">${svgAnimation}</div>
         <span>

@@ -5,6 +5,7 @@ import { html, svg } from "lit/static-html.js";
 import { WC } from "#WC";
 import globalsCss from "#globals.css";
 import styleCss from "./style.css";
+import { booleanConverter } from "../../helpers";
 
 const svgClip = svg`<svg
               viewBox="0 0 1 1"
@@ -39,7 +40,10 @@ export default class Avatar extends WC {
   /**
    * Enables indicator in the icon
    */
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: booleanConverter,
+  })
   active = false;
 
   /**

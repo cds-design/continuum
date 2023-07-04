@@ -17,9 +17,11 @@ export default defineConfig({
   build: {
     minify: "terser",
     lib: {
-      entry: "./src/index.ts",
+      entry: {
+        continuum: "./src/index.ts",
+        constants: "./src/constants.ts",
+      },
       formats: ["es", "cjs"],
-      fileName: "continuum",
     },
     rollupOptions: {
       external: /^lit/,

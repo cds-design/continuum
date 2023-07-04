@@ -12,7 +12,14 @@ import type HTMLCdsSlider from "./components/slider";
 import type HTMLCdsToggle from "./components/toggle";
 
 export type ComponentName = "alert" | "avatar" | "badge" | "button" | "check" | "input" | "progress" | "slider" | "toggle";
-export declare const TAG_NAME_PREFIX = "cds";
+declare global {
+    module globalThis {
+        namespace cds {
+            let version: string;
+            let loaded: Set<ComponentName>;
+        }
+    }
+}
 /**
  * Load web components as custom elements.
  * Only loads components that have not been loaded before.

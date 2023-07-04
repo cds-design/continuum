@@ -3,6 +3,7 @@ import { html } from "lit/static-html.js";
 import { WC } from "#WC";
 import globalsCss from "#globals.css";
 import styleCss from "./style.css";
+import { booleanConverter } from "#helpers";
 
 /**
  * A component that displays a button 
@@ -11,7 +12,10 @@ export default class Button extends WC {
   /**
    * Disables the button
    */
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: booleanConverter
+  })
   disabled = false;
 
   static styles = [globalsCss, styleCss];

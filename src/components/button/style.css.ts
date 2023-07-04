@@ -29,6 +29,12 @@ export default css`
     transition: calc(var(--duration) / 2) var(--easing-fn);
   }
 
+  slot {
+    max-width: var(--min-chars);
+    overflow: hidden;
+    display: inline-block;
+  }
+
   button:not(:disabled):active {
     transform: scale(0.95);
   }

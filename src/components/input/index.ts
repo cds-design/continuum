@@ -4,6 +4,7 @@ import { html } from "lit/static-html.js";
 import { WC } from "#WC";
 import globalsCss from "#globals.css";
 import styleCss from "./style.css";
+import { booleanConverter } from "#helpers";
 
 /**
  * A component that displays an input field, usually for forms
@@ -35,7 +36,11 @@ export default class Input extends WC {
   /**
    * Disables the input field
    */
-  @property({ type: Boolean }) disabled: boolean = false;
+  @property({
+    type: Boolean,
+    converter: booleanConverter,
+  })
+  disabled: boolean = false;
 
   private _inputHandler(event: Event) {
     if (this.type !== "password") {

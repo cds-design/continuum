@@ -9,7 +9,7 @@ export default class Alert extends WC {
      * The type of alert component
      * changes the color and icon of the alert
      */
-    type: "info" | "cross" | "warn";
+    type: "info" | "error" | "warn";
     /**
      * Makes the alert closable
      */

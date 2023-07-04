@@ -5,6 +5,7 @@ import { html } from "lit/static-html.js";
 import { WC } from "#WC";
 import globalsCss from "#globals.css";
 import styleCss from "../slider/style.css";
+import { booleanConverter } from "#helpers";
 
 /**
  * A component that displays a slider
@@ -22,8 +23,29 @@ export default class Slider extends WC {
   /**
    * Disables the slider
    */
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: booleanConverter,
+  })
   disabled = false;
+
+  /**
+   * The step of the slider
+   */
+  @property({ type: Number })
+  step = 1;
+
+  /**
+   * The minimum value of the slider
+   */
+  @property({ type: Number })
+  min = 0;
+
+  /**
+   * The maximum value of the slider
+   */
+  @property({ type: Number })
+  max = 100;
 
   private _handleInput(event: Event) {
     this.value = parseInt((event.target as HTMLInputElement).value);
@@ -38,8 +60,11 @@ export default class Slider extends WC {
         class=${classMap({
           disabled: this.disabled,
         })}
+        min=${this.min}
+        max=${this.max}
+        step=${this.step}
         style=${styleMap({
-          "--value": `${this.value}%`,
+          "--value": `${(this.value / this.max) * 100}%`,
         })}
       />
     `;

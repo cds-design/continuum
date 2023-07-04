@@ -1,8 +1,21 @@
 type ComponentName = string;
 
-export const TAG_NAME_PREFIX = "cds";
+import { TAG_NAME_PREFIX, VERSION } from "./constants";
 
-const loadedComponents = new Set<ComponentName>();
+declare global {
+  module globalThis {
+     namespace cds {
+      let version: string;
+      let loaded: Set<ComponentName>;
+    }
+  }
+}
+
+globalThis.cds = globalThis.cds || {};
+
+globalThis.cds.version = VERSION;
+
+globalThis.cds.loaded = new Set<ComponentName>();
 
 async function importComponent(name: ComponentName) {
   return (await import(`./components/${name}/index.ts`))
@@ -15,14 +28,15 @@ async function importComponent(name: ComponentName) {
  */
 function load(...components: ComponentName[]) {
   components.forEach(async (name) => {
-    if (loadedComponents.has(name)) {
+    if (globalThis.cds.loaded.has(name)) {
       return console.warn(`Component ${name} already loaded`);
     }
     const Component = await importComponent(name);
     customElements.define(`${TAG_NAME_PREFIX}-${name}`, Component);
-    customElements.whenDefined(`${TAG_NAME_PREFIX}-${name}`).then(() => {
-      loadedComponents.add(name);
-    });
+    // customElements.whenDefined(`${TAG_NAME_PREFIX}-${name}`).then(() => {
+    globalThis.cds.loaded.add(name);
+    // });
+
   });
 }
 

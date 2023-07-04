@@ -1,5 +1,5 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
-import { TAG_NAME_PREFIX } from "../src/index";
+import { TAG_NAME_PREFIX } from "../src/constants";
 
 function capitalizeFirstLetter(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

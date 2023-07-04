@@ -4,7 +4,7 @@ export default css`
   :host {
     font-size: calc(var(--font-size) * (3 / 4));
   }
-
+  
   div {
     font-size: calc(var(--font-size) * 0.75);
     padding-block: calc(var(--padding) / 2);
@@ -16,9 +16,12 @@ export default css`
     gap: calc(var(--gap) * 0.75);
     border-radius: var(--border-radius);
   }
-
-  span {
+  
+  slot {
     white-space: nowrap;
+    max-width: var(--min-chars);
+    overflow: hidden;
+    display: inline-block;
   }
 
   .close-icon {
