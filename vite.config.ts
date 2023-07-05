@@ -34,7 +34,11 @@ export default defineConfig({
       staticImport: true,
       exclude: "src/**/*.css.ts",
       outDir: "types",
-      afterBuild: typeModifier,
+      afterBuild: typeModifier({
+        componentsDir: "types/src/components",
+        entry: "types/src/index.d.ts",
+        tagNamePrefix: "cds",
+      }),
     }),
     cem({
       files: ["src/components/*/index.ts"],
