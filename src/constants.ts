@@ -1,4 +1,4 @@
-export { version as VERSION } from '../package.json';
+export { version as VERSION } from "../package.json";
 
 export const TAG_NAME_PREFIX = "cds";
 

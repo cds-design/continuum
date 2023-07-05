@@ -37,7 +37,8 @@ export default css`
     height: 100%;
     z-index: -1;
     /* border-radius: var(--border-radius); */
-    mask: var(--grain-img),
+    mask:
+      var(--grain-img),
       radial-gradient(circle at 0 0, transparent 25%, #000 80%) 0 0/100% 100%;
     background: no-repeat 0 0/100% 100%
       radial-gradient(

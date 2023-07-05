@@ -1,4 +1,4 @@
-import type { ComplexAttributeConverter } from 'lit';
+import type { ComplexAttributeConverter } from "lit";
 /**
  * Boolean converter for lit properties.
  *

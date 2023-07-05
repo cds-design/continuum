@@ -18,7 +18,7 @@ export default class Toggle extends WC {
   @property({
     type: Boolean,
     reflect: true,
-    converter: booleanConverter
+    converter: booleanConverter,
   })
   toggled = false;
 
@@ -27,7 +27,7 @@ export default class Toggle extends WC {
    */
   @property({
     type: Boolean,
-    converter: booleanConverter
+    converter: booleanConverter,
   })
   disabled = false;
 

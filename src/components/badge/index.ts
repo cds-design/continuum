@@ -20,7 +20,7 @@ export default class Badge extends WC {
    */
   @property({
     type: Boolean,
-    converter: booleanConverter
+    converter: booleanConverter,
   })
   closeable = false;
 
@@ -29,7 +29,7 @@ export default class Badge extends WC {
    */
   @property({
     type: Boolean,
-    converter: booleanConverter
+    converter: booleanConverter,
   })
   disabled = false;
 
@@ -58,12 +58,12 @@ export default class Badge extends WC {
           <slot></slot>
         </span>
         ${this.closeable
-      ? html`
+          ? html`
               <span class="close-icon" @click=${this.close}>
                 ${Icon.cross}
               </span>
             `
-      : null}
+          : null}
       </div>
     `;
   }

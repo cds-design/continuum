@@ -3,15 +3,15 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import postCSS from "./scripts/postCSS";
 import typeModifier from "./scripts/typeModifier";
-import cem from 'vite-plugin-cem'
+import cem from "vite-plugin-cem";
 
 export default defineConfig({
   resolve: {
     alias: [
       {
         find: "#globals.css?used",
-        replacement: "./src/styles/globals.css.ts"
-      }
+        replacement: "./src/styles/globals.css.ts",
+      },
     ],
   },
   build: {
@@ -40,8 +40,7 @@ export default defineConfig({
       files: ["src/components/*/index.ts"],
       output: "custom-elements.json",
       lit: true,
-      plugins: [
-      ]
+      plugins: [],
     }),
   ],
 });
