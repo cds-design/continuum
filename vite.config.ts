@@ -1,8 +1,8 @@
 import minifyLiterals from "rollup-plugin-minify-html-literals-v3";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import postCSS from "./scripts/postCSS";
-import typeModifier from "./scripts/typeModifier";
+import postCSS from "@cds-design/vite-plugin-lit-postcss";
+import typeModifier from "@cds-design/type-modifier";
 import cem from "vite-plugin-cem";
 
 export default defineConfig({
@@ -33,7 +33,7 @@ export default defineConfig({
     dts({
       staticImport: true,
       exclude: "src/**/*.css.ts",
-      outputDir: "types",
+      outDir: "types",
       afterBuild: typeModifier,
     }),
     cem({
