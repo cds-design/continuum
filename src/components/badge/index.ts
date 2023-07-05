@@ -50,7 +50,7 @@ export default class Badge extends WC {
     return html`
       <div
         class="texture"
-        .aria-disable=${this.disabled}
+        ?aria-disable=${this.disabled}
         aria-atomic
         role="status"
       >

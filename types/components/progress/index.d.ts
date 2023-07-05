@@ -13,5 +13,9 @@ export default class Progress extends WC {
    * The maximum value of the progress bar
    */
   max: number;
+    /**
+     * The minimum value of the progress bar
+     */
+    min: number;
   render(): TemplateResult;
 }

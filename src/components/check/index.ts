@@ -74,8 +74,8 @@ export default class Check extends WC {
           name="check"
           id="check"
           @input=${this.toggle}
-          .disabled=${this.disabled}
-          .checked=${this.checked}
+          ?disabled=${this.disabled}
+          ?checked=${this.checked}
         />
         <div class="texture">${svgAnimation}</div>
         <span>

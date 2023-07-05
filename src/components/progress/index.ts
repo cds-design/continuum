@@ -20,7 +20,12 @@ export default class Progress extends WC {
    */
   @property({ type: Number }) max: number = 100;
 
+  /**
+   * The minimum value of the progress bar
+   */
+  @property({ type: Number }) min: number = 0;
+
   render() {
-    return html` <progress value=${this.value} max=${this.max}></progress> `;
+    return html` <progress .value=${this.value} .max=${this.max} .min=${this.min}></progress> `;
   }
 }
