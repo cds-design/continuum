@@ -15,26 +15,33 @@ export default async function typeModifier() {
     "type ComponentName = string;",
     `export type ComponentName = ${folders
       .map((folder) => `"${folder}"`)
-      .join(" | ")};`
+      .join(" | ")};`,
   );
 
   const componentTypesImports = folders
     .map(
       (folder) =>
-        `import type HTML${capitalizeFirstLetter(TAG_NAME_PREFIX)}${capitalizeFirstLetter(
-          folder
-        )} from "./components/${folder}";`
+        `import type HTML${capitalizeFirstLetter(
+          TAG_NAME_PREFIX,
+        )}${capitalizeFirstLetter(folder)} from "./components/${folder}";`,
     )
     .join("\n");
 
   const HTMLnamespace = folders
-    .map((folder) => `"${TAG_NAME_PREFIX}-${folder}": HTML${capitalizeFirstLetter(TAG_NAME_PREFIX)}${capitalizeFirstLetter(folder)}`)
+    .map(
+      (folder) =>
+        `"${TAG_NAME_PREFIX}-${folder}": HTML${capitalizeFirstLetter(
+          TAG_NAME_PREFIX,
+        )}${capitalizeFirstLetter(folder)}`,
+    )
     .join("\n        ");
 
   const JSXnamespace = folders
     .map(
       (folder) =>
-        `"${TAG_NAME_PREFIX}-${folder}": CDS2JSX<HTML${capitalizeFirstLetter(TAG_NAME_PREFIX)}${capitalizeFirstLetter(folder)}>`
+        `"${TAG_NAME_PREFIX}-${folder}": CDS2JSX<HTML${capitalizeFirstLetter(
+          TAG_NAME_PREFIX,
+        )}${capitalizeFirstLetter(folder)}>`,
     )
     .join("\n            ");
 

@@ -6,7 +6,7 @@ import styleCss from "./style.css";
 import { booleanConverter } from "#helpers";
 
 /**
- * A component that displays a button 
+ * A component that displays a button
  */
 export default class Button extends WC {
   /**
@@ -14,7 +14,7 @@ export default class Button extends WC {
    */
   @property({
     type: Boolean,
-    converter: booleanConverter
+    converter: booleanConverter,
   })
   disabled = false;
 

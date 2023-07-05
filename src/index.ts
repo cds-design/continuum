@@ -4,7 +4,7 @@ import { TAG_NAME_PREFIX, VERSION } from "./constants";
 
 declare global {
   module globalThis {
-     namespace cds {
+    namespace cds {
       let version: string;
       let loaded: Set<ComponentName>;
     }
@@ -36,7 +36,6 @@ function load(...components: ComponentName[]) {
     // customElements.whenDefined(`${TAG_NAME_PREFIX}-${name}`).then(() => {
     globalThis.cds.loaded.add(name);
     // });
-
   });
 }
 
