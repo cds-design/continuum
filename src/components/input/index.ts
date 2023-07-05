@@ -63,6 +63,7 @@ export default class Input extends WC {
           type=${this.type}
           id="input"
           placeholder=${this.placeholder}
+          ?disabled=${this.disabled}
         />
       </div>
     `;

@@ -10,6 +10,7 @@ export class WC extends LitElement {
     const className = new Set(this.className?.split(" ") as string[]);
     className.delete("");
     this.classList?.add(...className);
+    // this.classList?.add(...(this.classList?.join(" ") + this.className).split(" "))
   }
 
   protected updated(
