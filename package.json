@@ -1,6 +1,6 @@
 {
   "name": "cds-design",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/continuum.js",
   "types": "./types/src/index.d.ts",
