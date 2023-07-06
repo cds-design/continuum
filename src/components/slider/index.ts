@@ -32,19 +32,19 @@ export default class Slider extends WC {
   /**
    * The step of the slider
    */
-  @property({ type: Number,reflect:true })
+  @property({ type: Number, reflect: true })
   step = 1;
 
   /**
    * The minimum value of the slider
    */
-  @property({ type: Number,reflect:true })
+  @property({ type: Number, reflect: true })
   min = 0;
 
   /**
    * The maximum value of the slider
    */
-  @property({ type: Number,reflect:true})
+  @property({ type: Number, reflect: true })
   max = 100;
 
   private _handleInput(event: Event) {
@@ -65,8 +65,9 @@ export default class Slider extends WC {
         .step=${this.step}
         ?disabled=${this.disabled}
         style=${styleMap({
-          "--value": `${((this.value-this.min) / (this.max-this.min))* 100}%`,
-
+          "--value": `${
+            ((this.value - this.min) / (this.max - this.min)) * 100
+          }%`,
         })}
       />
     `;

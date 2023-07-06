@@ -26,6 +26,12 @@ export default class Progress extends WC {
   @property({ type: Number }) min: number = 0;
 
   render() {
-    return html` <progress .value=${this.value} .max=${this.max} .min=${this.min}></progress> `;
+    return html`
+      <progress
+        .value=${this.value}
+        .max=${this.max}
+        .min=${this.min}
+      ></progress>
+    `;
   }
 }
