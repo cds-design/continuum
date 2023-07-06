@@ -5,17 +5,19 @@ import { TAG_NAME_PREFIX, VERSION } from "./constants";
 declare global {
   module globalThis {
     namespace cds {
+      // @ts-ignore
       let version: string;
+      // @ts-ignore
       let loaded: Set<ComponentName>;
     }
   }
 }
 
-globalThis.cds = globalThis.cds || {};
+globalThis.cds = globalThis.cds ?? {};
 
-globalThis.cds.version = VERSION;
+cds.version = cds.version ?? VERSION;
 
-globalThis.cds.loaded = new Set<ComponentName>();
+globalThis.cds.loaded = globalThis.cds.loaded ?? new Set<ComponentName>();
 
 async function importComponent(name: ComponentName) {
   return (await import(`./components/${name}/index.ts`))
