@@ -3,17 +3,17 @@
   "version": "0.0.2",
   "type": "module",
   "main": "./dist/continuum.js",
-  "types": "./types/continuum.d.ts",
+  "types": "./types/src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/continuum.js",
       "require": "./dist/continuum.cjs",
-      "types": "./types/continuum.d.ts"
+      "types": "./types/src/index.d.ts"
     },
     "./dist/constants": {
       "import": "./dist/constants.js",
       "require": "./dist/constants.cjs",
-      "types": "./types/constants.d.ts"
+      "types": "./types/src/constants.d.ts"
     },
     "./dist/custom-elements.json": "./dist/custom-elements.json"
   },
