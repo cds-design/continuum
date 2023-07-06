@@ -1,9 +1,27 @@
 {
   "name": "cds-design",
   "version": "0.1.1",
+  "description": "Components library for Continuum Design System (CDS) by Verve",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cds-design/continuum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cds-design/continuum/issues"
+  },
+  "homepage": "https://github.com/cds-design/continuum#readme",
+  "keywords": [
+    "continuum",
+    "design system",
+    "components",
+    "web components",
+    "lit",
+    "lit-element",
+    "cds"
+  ],
   "type": "module",
   "main": "./dist/continuum.js",
-  "types": "./types/src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/continuum.js",
@@ -17,22 +35,35 @@
     },
     "./dist/custom-elements.json": "./dist/custom-elements.json"
   },
-  "imports": {
-    "#WC": "./src/WC.ts",
-    "#globals.css": "./src/styles/globals.css.ts",
-    "#helpers": "./src/helpers/index.ts"
-  },
   "files": [
     "dist",
     "types"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "vite",
     "lint": "eslint src/**",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "preview": "vite preview"
   },
+  "imports": {
+    "#WC": "./src/WC.ts",
+    "#globals.css": "./src/styles/globals.css.ts",
+    "#helpers": "./src/helpers/index.ts"
+  },
+  "maintainers": [
+    {
+      "name": "Rajaniraiyn R",
+      "email": "rajaniraiyn@gmail.com",
+      "url": "https://rajaniraiyn.github.io"
+    },
+    {
+      "name": "Tejaswini T",
+      "email": "teejaswan12@gmail.com",
+      "url": "https://teejaswan.github.io"
+    }
+  ],
+  "types": "./types/src/index.d.ts",
   "dependencies": {
     "lit": "^2.7.6"
   },
