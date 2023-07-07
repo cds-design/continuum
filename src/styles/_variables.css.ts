@@ -31,15 +31,15 @@ export default css`
     --transparent: 0;
 
     /* COLORS */
-    --ct-bg-rgb: 0, 255, 215;
+    /* --ct-bg-rgb: 0, 255, 215; */
 
-    --bg-rgb: var(--ct-bg-rgb);
+    --bg-rgb: var(--ct-bg-rgb, 0, 255, 215);
     --accent-rgb: var(--bg-rgb);
     --accent: rgb(var(--bg-rgb));
 
-    --ct-color-rgb: 255, 255, 255;
+    /* --ct-color-rgb: 255, 255, 255; */
 
-    --color-rgb: var(--ct-color-rgb);
+    --color-rgb: var(--ct-color-rgb, 255, 255, 255);
     --color: rgb(var(--color-rgb));
 
     /* SHADOWS */
