@@ -42,3 +42,28 @@ function load(...components: ComponentName[]) {
 }
 
 export { load as default, load };
+
+// TYPE DEFINITIONS FOR JSX/TSX
+
+import type { LitElement } from "lit";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
+
+/**
+ * 
+ * Exclude `LitElement` Props
+ * from the CDS Custom Elements
+ * 
+ */
+type ExcludeLitProps<T> = Pick<T, Exclude<keyof T, keyof LitElement>>
+
+/**
+ * 
+ * Custom Elements to `JSX.IntrinsicElements`
+ * 
+ * this converts the custom elements to intrinsic elements
+ * so that they can be used in JSX as regular HTML elements
+ * with intellisense and type checking.
+ * 
+ * @license MIT License
+ */
+export type CDS2JSX<T> = DetailedHTMLProps<ExcludeLitProps<T> | HTMLAttributes<T>, T>;
