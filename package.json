@@ -63,7 +63,6 @@
       "url": "https://teejaswan.github.io"
     }
   ],
-  "sideEffects": false,
   "types": "./types/src/index.d.ts",
   "dependencies": {
     "lit": "^2.7.6"
