@@ -112,6 +112,6 @@ Give a ⭐️ if this project helped you!
 
 ---
 
-[`Made with ❤️ by Verve`](https://github.com/verve)
+[`Made with ❤️ by Verve`](https://github.com/ve-r-ve)
 
 </div>
