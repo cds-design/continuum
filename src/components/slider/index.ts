@@ -32,23 +32,23 @@ export default class Slider extends WC {
   /**
    * The step of the slider
    */
-  @property({ type: Number, reflect: true })
+  @property({ type: Number })
   step = 1;
 
   /**
    * The minimum value of the slider
    */
-  @property({ type: Number, reflect: true })
+  @property({ type: Number })
   min = 0;
 
   /**
    * The maximum value of the slider
    */
-  @property({ type: Number, reflect: true })
+  @property({ type: Number })
   max = 100;
 
   private _handleInput(event: Event) {
-    this.value = parseInt((event.target as HTMLInputElement).value);
+    this.value = parseFloat((event.target as HTMLInputElement).value);
   }
 
   render() {
