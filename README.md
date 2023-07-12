@@ -102,7 +102,7 @@ Feel free to check [issues page](https://github.com/cds-design/continuum/issues)
 
 Give a ⭐️ if this project helped you!
 
-## 🫂 Contributors
+## 🤝 Contributors
 
 <a href="https://github.com/cds-design/continuum/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=cds-design/continuum" />
