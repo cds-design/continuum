@@ -65,12 +65,12 @@
   ],
   "types": "./types/src/index.d.ts",
   "dependencies": {
-    "lit": "^2.7.6"
+    "lit": "^2.8.0"
   },
   "devDependencies": {
     "@cds-design/type-modifier": "*",
     "@cds-design/vite-plugin-lit-postcss": "*",
-    "@types/react": "^18.2.6",
+    "@types/react": "^18.2.20",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.44.0",
     "eslint-plugin-lit": "^1.8.3",
